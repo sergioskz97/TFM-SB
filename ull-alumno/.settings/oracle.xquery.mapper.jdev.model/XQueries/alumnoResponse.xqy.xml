@@ -1,0 +1,6 @@
+<view_states>
+   <function arity="1" name="func">
+      <source_tree_view last.visible.row="29" last.visible.path="/sourceRoot[[0]]/EgresadosCollection[[0]]/Egresados[[0]]/paisfam[[27]]" first.visible.path="/sourceRoot[[0]]/EgresadosCollection[[0]]" expanded.paths="/sourceRoot[[0]]/EgresadosCollection[[0]]&#xA;/sourceRoot[[0]]/EgresadosCollection[[0]]/Egresados[[0]]" first.visible.row="0" selected.paths="/sourceRoot[[0]]/EgresadosCollection[[0]]/Egresados[[0]]/paisfam[[27]]"/>
+      <target_tree_view last.visible.row="28" last.visible.path="/TargetRoot[[0]]/Egresados[[0]]/Conditional[[27]]" first.visible.path="/TargetRoot[[0]]/Egresados[[0]]" expanded.paths="/TargetRoot[[0]]/Egresados[[0]]" first.visible.row="0" selected.paths=""/>
+   </function>
+</view_states>

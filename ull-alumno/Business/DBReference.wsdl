@@ -1,0 +1,24 @@
+<wsdl:definitions name="DBReference" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBReference" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBReference" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="DBReference_plt">
+    <plt:role name="DBReference_role">
+      <plt:portType name="tns:DBReference_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" schemaLocation="DBReference_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="DBReferenceSelect_inputParameters">
+        <wsdl:part name="DBReferenceSelect_inputParameters" element="top:DBReferenceSelect_titulacion_curso_dni_sexoInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="EgresadosCollection_msg">
+        <wsdl:part name="EgresadosCollection" element="top:EgresadosCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="DBReference_ptt">
+        <wsdl:operation name="DBReferenceSelect">
+            <wsdl:input message="tns:DBReferenceSelect_inputParameters"/>
+            <wsdl:output message="tns:EgresadosCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
