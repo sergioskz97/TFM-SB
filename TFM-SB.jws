@@ -23,6 +23,9 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationBuildToolContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
+   <list n="listOfChildren">
+      <hash><url n="URL" path="ull-alumno/ull-alumno.jpr"/></hash>
+   </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
          <hash n="TFM-SB">
