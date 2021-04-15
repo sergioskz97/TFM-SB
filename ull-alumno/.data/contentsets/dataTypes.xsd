@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:complexType name="Egresados">
+    <xsd:sequence>
+      <xsd:element name="cursoacadRef" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="tipoDocIdentidad" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="numeroDocumento" type="xsd:string" nillable="true"/>
+      <xsd:element name="letraDocumento" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="apellido1" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="apellido2" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="nombre" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="sexo" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="nacionalidad" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="paisNacimiento" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaNacimiento" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="universidad" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="codTitulacion" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaccesosue" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaccesoest" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="modaccesoest" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="notaingresoest" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="fechaegreso" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="notaegresoest4" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="notaegresoest10" type="xsd:decimal" minOccurs="0" nillable="true"/>
+      <xsd:element name="estupadre" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="estumadre" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="ocupadre" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="ocumadre" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="trabajoalum" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="munifam" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="codpostfam" type="xsd:string" minOccurs="0" nillable="true"/>
+      <xsd:element name="paisfam" type="xsd:string" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestType">
+    <xsd:sequence>
+      <xsd:element name="titulacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ControlType">
+    <xsd:sequence>
+      <xsd:element name="codigoRespuesta"/>
+      <xsd:element name="descripcionError"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="control" type="ControlType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Request" type="RequestType"/>
+  <xsd:element name="Response" type="ResponseType"/>
+</xsd:schema>
