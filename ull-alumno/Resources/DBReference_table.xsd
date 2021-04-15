@@ -38,10 +38,13 @@
          <xs:element name="paisfam" type="string3" minOccurs="0" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="DBReferenceSelect_titulacionInputParameters" type="DBReferenceSelect_titulacion"/>
-   <xs:complexType name="DBReferenceSelect_titulacion">
+   <xs:element name="DBReferenceSelect_titulacion_curso_dni_sexoInputParameters" type="DBReferenceSelect_titulacion_curso_dni_sexo"/>
+   <xs:complexType name="DBReferenceSelect_titulacion_curso_dni_sexo">
       <xs:sequence>
          <xs:element name="titulacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="curso" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="dni" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="sexo" type="xs:string" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <xs:simpleType name="string7">

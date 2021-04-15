@@ -14,16 +14,55 @@
          <querying>
             <queries>
                <query name="DBReferenceSelect" xsi:type="read-all-query">
-                  <criteria operator="equal" xsi:type="relation-expression">
-                     <left name="codTitulacion" xsi:type="query-key-expression">
-                        <base xsi:type="base-expression"/>
+                  <criteria operator="or" xsi:type="logic-expression">
+                     <left operator="or" xsi:type="logic-expression">
+                        <left operator="or" xsi:type="logic-expression">
+                           <left operator="equal" xsi:type="relation-expression">
+                              <left name="codTitulacion" xsi:type="query-key-expression">
+                                 <base xsi:type="base-expression"/>
+                              </left>
+                              <right xsi:type="parameter-expression">
+                                 <parameter name="titulacion" xsi:type="column"/>
+                              </right>
+                           </left>
+                           <right operator="equal" xsi:type="relation-expression">
+                              <left name="cursoacadRef" xsi:type="query-key-expression">
+                                 <base xsi:type="base-expression"/>
+                              </left>
+                              <right xsi:type="parameter-expression">
+                                 <parameter name="curso" xsi:type="column"/>
+                              </right>
+                           </right>
+                        </left>
+                        <right operator="equal" xsi:type="relation-expression">
+                           <left name="numeroDocumento" xsi:type="query-key-expression">
+                              <base xsi:type="base-expression"/>
+                           </left>
+                           <right xsi:type="parameter-expression">
+                              <parameter name="dni" xsi:type="column"/>
+                           </right>
+                        </right>
                      </left>
-                     <right xsi:type="parameter-expression">
-                        <parameter name="titulacion" xsi:type="column"/>
+                     <right operator="equal" xsi:type="relation-expression">
+                        <left name="sexo" xsi:type="query-key-expression">
+                           <base xsi:type="base-expression"/>
+                        </left>
+                        <right xsi:type="parameter-expression">
+                           <parameter name="sexo" xsi:type="column"/>
+                        </right>
                      </right>
                   </criteria>
                   <arguments>
                      <argument name="titulacion">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="curso">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="dni">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="sexo">
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>
