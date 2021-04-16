@@ -1,19 +1,24 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" xmlns="http://wadl.dev.java.net/2009/02">
    <doc title="RestService">RestService</doc>
+   <grammars>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" schemaLocation="../Business/DBReference_table.xsd"/>
+        </xsd:schema>
+   </grammars>
    <resources>
-      <resource path="/">
-         <method name="GET" soa:name="get">
-            <request>
-               <param name="sexo" style="query" type="xsd:string"/>
-               <param name="dni" style="query" type="xsd:string"/>
-               <param name="titulacion" style="query" type="xsd:string"/>
-               <param name="curso" style="query" type="xsd:string"/>
+      <resource path="/get">
+         <method name="GET" soa:wsdlOperation="Operation1">
+            <request soa:paramElement="pns:DBReferenceSelect_titulacion_curso_dni_sexoInputParameters" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference">
+               <param name="titulacion" style="query" soa:expression="$msg.request/ns0:titulacion" type="xsd:string"/>
+               <param name="curso" style="query" soa:expression="$msg.request/ns0:curso" type="xsd:string"/>
+               <param name="dni" style="query" soa:expression="$msg.request/ns0:dni" type="xsd:string"/>
+               <param name="sexo" style="query" soa:expression="$msg.request/ns0:sexo" type="xsd:string"/>
             </request>
             <response status="200">
-               <representation mediaType="application/json"/>
+               <representation mediaType="application/xml" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference"/>
+               <representation mediaType="application/json" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference"/>
             </response>
-            <response status="500"/>
          </method>
       </resource>
    </resources>
