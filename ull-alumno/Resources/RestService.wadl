@@ -7,7 +7,7 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/">
+      <resource path="/get">
          <method name="GET" soa:wsdlOperation="execute">
             <request soa:paramElement="pns:DBReferenceSelect_titulacion_curso_dni_sexoInputParameters" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference">
                <param name="titulacion" style="query" soa:expression="$msg.inpt/inp1:titulacion" type="xsd:string"/>
@@ -16,7 +16,6 @@
                <param name="sexo" style="query" soa:expression="$msg.inpt/inp1:sexo" type="xsd:string"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference"/>
                <representation mediaType="application/json" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference"/>
             </response>
          </method>
