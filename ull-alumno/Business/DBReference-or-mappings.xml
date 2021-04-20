@@ -14,44 +14,6 @@
          <querying>
             <queries>
                <query name="DBReferenceSelect" xsi:type="read-all-query">
-                  <criteria operator="or" xsi:type="logic-expression">
-                     <left operator="or" xsi:type="logic-expression">
-                        <left operator="or" xsi:type="logic-expression">
-                           <left operator="equal" xsi:type="relation-expression">
-                              <left name="codTitulacion" xsi:type="query-key-expression">
-                                 <base xsi:type="base-expression"/>
-                              </left>
-                              <right xsi:type="parameter-expression">
-                                 <parameter name="titulacion" xsi:type="column"/>
-                              </right>
-                           </left>
-                           <right operator="equal" xsi:type="relation-expression">
-                              <left name="cursoacadRef" xsi:type="query-key-expression">
-                                 <base xsi:type="base-expression"/>
-                              </left>
-                              <right xsi:type="parameter-expression">
-                                 <parameter name="curso" xsi:type="column"/>
-                              </right>
-                           </right>
-                        </left>
-                        <right operator="equal" xsi:type="relation-expression">
-                           <left name="numeroDocumento" xsi:type="query-key-expression">
-                              <base xsi:type="base-expression"/>
-                           </left>
-                           <right xsi:type="parameter-expression">
-                              <parameter name="dni" xsi:type="column"/>
-                           </right>
-                        </right>
-                     </left>
-                     <right operator="equal" xsi:type="relation-expression">
-                        <left name="sexo" xsi:type="query-key-expression">
-                           <base xsi:type="base-expression"/>
-                        </left>
-                        <right xsi:type="parameter-expression">
-                           <parameter name="sexo" xsi:type="column"/>
-                        </right>
-                     </right>
-                  </criteria>
                   <arguments>
                      <argument name="titulacion">
                         <type>java.lang.String</type>
@@ -66,6 +28,12 @@
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>
+                  <call xsi:type="sql-call">
+                     <sql>SELECT *
+FROM EGRESADOS 
+WHERE ((COD_TITULACION = #titulacion) AND (SEXO = #sexo)) OR ((((CURSOACAD_REF = #curso) OR (COD_TITULACION = #titulacion)) OR (NUMERO_DOCUMENTO = #dni)) OR (SEXO = #sexo))
+</sql>
+                  </call>
                   <reference-class>DBReference.Egresados</reference-class>
                   <container xsi:type="list-container-policy">
                      <collection-type>java.util.Vector</collection-type>
