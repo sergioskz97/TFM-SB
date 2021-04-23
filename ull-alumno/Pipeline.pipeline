@@ -2,10 +2,10 @@
 <con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:coreEntry>
         <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
-            <con:wsdl ref="ull-alumno/GetPipeline"/>
+            <con:wsdl ref="ull-alumno/Pipeline"/>
             <con:binding>
                 <con:name>execute_bind</con:name>
-                <con:namespace>http://xmlns.oracle.com/TFM-SB/ull-alumno/GetPipeline</con:namespace>
+                <con:namespace>http://xmlns.oracle.com/TFM-SB/ull-alumno/Pipeline</con:namespace>
             </con:binding>
         </con:binding>
         <con:xqConfiguration>
@@ -18,15 +18,14 @@
                 <con:context/>
                 <con:actions>
                     <con1:route>
-                        <con2:id>_ActionId-N53e37fff.N2d2d6151.0.178dc2c6835.N7ffc</con2:id>
-                        <con1:service ref="ull-alumno/Business/DBReference" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con1:operation>DBReferenceSelect</con1:operation>
+                        <con2:id>_ActionId-N53e37fff.29e3b855.0.178ff9331b4.N8000</con2:id>
+                        <con1:service ref="ull-alumno/getAlumnosByTit" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation passThrough="true"/>
                         <con1:outboundTransform/>
                         <con1:responseTransform/>
                     </con1:route>
                 </con:actions>
             </con:route-node>
         </con:flow>
-        <con:partner-links></con:partner-links>
     </con:router>
 </con:pipelineEntry>
