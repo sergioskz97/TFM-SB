@@ -1,9 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" xmlns="http://wadl.dev.java.net/2009/02">
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" xmlns="http://wadl.dev.java.net/2009/02" xmlns:ns0="http://www.example.org" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/getAlumnosByTit">
    <doc title="RestService">RestService</doc>
    <grammars>
       <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference" schemaLocation="../Business/DBReference_table.xsd"/>
+        </xsd:schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/getAlumnosByTit" schemaLocation="getAlumnosByTit_table.xsd"/>
         </xsd:schema>
    </grammars>
    <resources>
@@ -17,6 +20,16 @@
             </request>
             <response status="200">
                <representation mediaType="application/json" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBReference"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/get/alumnByTit">
+         <method name="GET" soa:wsdlOperation="get">
+            <request soa:paramElement="pns:getAlumnosByTitSelect_titulacionInputParameters" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/getAlumnosByTit">
+               <param name="titulacion" style="query" soa:expression="$msg.request/ns1:titulacion" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/getAlumnosByTit"/>
             </response>
          </method>
       </resource>
