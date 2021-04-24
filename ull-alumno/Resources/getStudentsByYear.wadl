@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="getStudentsByYear">RestService</doc>
+   <grammars>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" schemaLocation="DBstudentsByYear.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="execute">
+            <request soa:paramElement="pns:DBstudentsByYearInput" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear">
+               <param name="curso" style="query" soa:expression="$msg.in/inp1:curso" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:DBstudentsByYearOutputCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>
