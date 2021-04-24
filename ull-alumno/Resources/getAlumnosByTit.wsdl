@@ -17,15 +17,15 @@
         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/getAlumnosByTit" schemaLocation="getAlumnosByTit_table.xsd" />
       </schema>
     </wsdl:types>
-    <wsdl:message name="getAlumnosByTitSelect_inputParameters">
-        <wsdl:part name="getAlumnosByTitSelect_inputParameters" element="top:getAlumnosByTitSelect_titulacionInputParameters"/>
+    <wsdl:message name="getNumeroAlumnosTitSelect_inputParameters">
+        <wsdl:part name="getNumeroAlumnosTitSelect_inputParameters" element="top:getAlumnosByTitSelect_titulacionInputParameters"/>
     </wsdl:message>
     <wsdl:message name="EgresadosCollection_msg">
         <wsdl:part name="EgresadosCollection" element="top:EgresadosCollection"/>
     </wsdl:message>
     <wsdl:portType name="getAlumnosByTit_ptt">
-        <wsdl:operation name="getAlumnosByTitSelect">
-            <wsdl:input message="tns:getAlumnosByTitSelect_inputParameters"/>
+        <wsdl:operation name="getNumeroAlumnosTitSelect">
+            <wsdl:input message="tns:getNumeroAlumnosTitSelect_inputParameters"/>
             <wsdl:output message="tns:EgresadosCollection_msg"/>
         </wsdl:operation>
     </wsdl:portType>

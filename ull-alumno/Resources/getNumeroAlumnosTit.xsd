@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/getNumeroAlumnosTit" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/getNumeroAlumnosTit" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getNumeroAlumnosTitInput" type="getNumeroAlumnosTitInput"/>
+   <xs:complexType name="getNumeroAlumnosTitInput">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:element name="getNumeroAlumnosTitOutputCollection" type="getNumeroAlumnosTitOutputCollection"/>
+   <xs:complexType name="getNumeroAlumnosTitOutputCollection">
+      <xs:sequence>
+         <xs:element name="getNumeroAlumnosTitOutput" type="getNumeroAlumnosTitOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getNumeroAlumnosTitOutput">
+      <xs:sequence>
+         <xs:element name="COD_TITULACION" type="xs:string" nillable="true"/>
+         <xs:element name="COUNT___" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
