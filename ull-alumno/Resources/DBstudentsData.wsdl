@@ -1,0 +1,32 @@
+<wsdl:definitions
+     name="DBstudentsData"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsData"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsData"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="DBstudentsData_plt" >
+    <plt:role name="DBstudentsData_role" >
+      <plt:portType name="tns:DBstudentsData_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" schemaLocation="DBstudentsData_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="DBstudentsDataSelect_inputParameters">
+        <wsdl:part name="DBstudentsDataSelect_inputParameters" element="top:DBstudentsDataSelect_titulacion_sexo_curso_dniInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="EgresadosCollection_msg">
+        <wsdl:part name="EgresadosCollection" element="top:EgresadosCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="DBstudentsData_ptt">
+        <wsdl:operation name="DBstudentsDataSelect">
+            <wsdl:input message="tns:DBstudentsDataSelect_inputParameters"/>
+            <wsdl:output message="tns:EgresadosCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
