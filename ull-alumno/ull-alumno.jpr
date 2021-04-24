@@ -196,5 +196,5 @@
          </list>
       </hash>
    </hash>
-   <value n="SOA_WSDL_FOLDER_NAME" v=""/>
+   <value n="SOA_WSDL_FOLDER_NAME" v="Proxy/"/>
 </jpr:project>

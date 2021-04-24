@@ -1,0 +1,38 @@
+<wsdl:definitions
+     name="DBstudentsByYear"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsByYear"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsByYear"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="DBstudentsByYear_plt" >
+    <plt:role name="DBstudentsByYear_role" >
+      <plt:portType name="tns:DBstudentsByYear_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" schemaLocation="DBstudentsByYear.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" schemaLocation="DBstudentsByYear.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" schemaLocation="DBstudentsByYear.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="DBstudentsByYearInput_msg">
+        <wsdl:part name="DBstudentsByYearInput_msg" element="db:DBstudentsByYearInput"/>
+    </wsdl:message>
+    <wsdl:message name="DBstudentsByYearOutputCollection_msg">
+        <wsdl:part name="DBstudentsByYearOutputCollection" element="db:DBstudentsByYearOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="DBstudentsByYear_ptt">
+        <wsdl:operation name="DBstudentsByYear">
+            <wsdl:input message="tns:DBstudentsByYearInput_msg"/>
+            <wsdl:output message="tns:DBstudentsByYearOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

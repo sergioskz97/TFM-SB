@@ -4,6 +4,9 @@
         <ns:interface src="BusinessService:ull-alumno/Business/DBReference"/>
     </ns:reference>
     <ns:reference>
-        <ns:interface src="BusinessService:ull-alumno/getAlumnosByTit"/>
+        <ns:interface src="BusinessService:ull-alumno/Business/DBstudentsByYear"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ull-alumno/Resources/getNumeroAlumnosTit"/>
     </ns:reference>
 </ns:composite>
