@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="getStudentsTotal">RestService</doc>
+   <grammars>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsTotalPipeline" xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal" schemaLocation="DBstudentsTotal.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="execute">
+            <request soa:paramElement="pns:DBstudentsTotalInput" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal"/>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:DBstudentsTotalOutputCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>
