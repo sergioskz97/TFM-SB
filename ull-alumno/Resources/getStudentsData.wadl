@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="getStudentsData">RestService</doc>
+   <grammars>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" schemaLocation="DBstudentsData_table.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="execute">
+            <request soa:paramElement="pns:DBstudentsDataSelect_titulacion_curso_sexo_dniInputParameters" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData">
+               <param name="titulacion" style="query" soa:expression="$msg.in/inp1:titulacion" type="xsd:string"/>
+               <param name="curso" style="query" soa:expression="$msg.in/inp1:curso" type="xsd:string"/>
+               <param name="sexo" style="query" soa:expression="$msg.in/inp1:sexo" type="xsd:string"/>
+               <param name="dni" style="query" soa:expression="$msg.in/inp1:dni" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:EgresadosCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

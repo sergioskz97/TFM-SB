@@ -1,0 +1,32 @@
+<wsdl:definitions
+     name="DBstudentsTotal"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsTotal"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsTotal"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="DBstudentsTotal_plt" >
+    <plt:role name="DBstudentsTotal_role" >
+      <plt:portType name="tns:DBstudentsTotal_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal" schemaLocation="DBstudentsTotal.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="DBstudentsTotalInput_msg">
+        <wsdl:part name="DBstudentsTotalInput_msg" element="db:DBstudentsTotalInput"/>
+    </wsdl:message>
+    <wsdl:message name="DBstudentsTotalOutputCollection_msg">
+        <wsdl:part name="DBstudentsTotalOutputCollection" element="db:DBstudentsTotalOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="DBstudentsTotal_ptt">
+        <wsdl:operation name="DBstudentsTotal">
+            <wsdl:input message="tns:DBstudentsTotalInput_msg"/>
+            <wsdl:output message="tns:DBstudentsTotalOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
     <ns:reference>
-        <ns:interface src="BusinessService:ull-alumno/Business/DBReference"/>
+        <ns:interface src="BusinessService:ull-alumno/Business/DBstudentsData"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ull-alumno/Business/DBstudentsTotal"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:ull-alumno/Business/DBstudentsByYear"/>
-    </ns:reference>
-    <ns:reference>
-        <ns:interface src="BusinessService:ull-alumno/Resources/getNumeroAlumnosTit"/>
-    </ns:reference>
-    <ns:reference>
-        <ns:interface src="BusinessService:ull-alumno/DBstudentsData"/>
     </ns:reference>
 </ns:composite>
