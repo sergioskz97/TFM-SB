@@ -19,7 +19,7 @@
         <Contents>system</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="sid">
-        <Contents>tfm</Contents>
+        <Contents>orcl</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>

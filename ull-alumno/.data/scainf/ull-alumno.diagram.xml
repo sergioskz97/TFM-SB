@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
-    <dgm:gService name="getStudentsTotal">
+    <dgm:gService name="getStudentsData">
         <dgm:body borderWidth="2" arcRad="20" X="21" Y="462" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
@@ -8,7 +8,7 @@
         <dgm:shadow arcRad="20" X="11" Y="455" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:outputPort name="getStudentsTotal" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="getStudentsData" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="7" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gService>
@@ -36,7 +36,19 @@
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gService>
-    <dgm:gService name="getStudentsData">
+    <dgm:gService name="getStudentsPipelineProxyService">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="374" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="367" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="getStudentsPipelineProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="getStudentsTotal">
         <dgm:body borderWidth="2" arcRad="20" X="21" Y="114" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
@@ -44,28 +56,16 @@
         <dgm:shadow arcRad="20" X="11" Y="107" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:outputPort name="getStudentsData" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="getStudentsTotal" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="7" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gService>
-    <dgm:gService name="getStudentsDataPipelineProxyService">
+    <dgm:gService name="getStudentsTotalPipelineProxyService">
         <dgm:body borderWidth="2" arcRad="20" X="21" Y="26" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
         <dgm:shadow arcRad="20" X="11" Y="19" width="156" height="68">
-            <dgm:bgColor r="196" g="228" b="240"/>
-        </dgm:shadow>
-        <dgm:outputPort name="getStudentsDataPipelineProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
-        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
-        <dgm:operations/>
-    </dgm:gService>
-    <dgm:gService name="getStudentsTotalPipelineProxyService">
-        <dgm:body borderWidth="2" arcRad="20" X="21" Y="374" width="137" height="54">
-            <dgm:borderColor r="153" g="153" b="153"/>
-            <dgm:bgColor r="255" g="255" b="255"/>
-        </dgm:body>
-        <dgm:shadow arcRad="20" X="11" Y="367" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:outputPort name="getStudentsTotalPipelineProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -85,11 +85,11 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="DBstudentsData">
-        <dgm:body borderWidth="2" arcRad="20" X="684" Y="70" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="684" Y="418" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="674" Y="63" width="156" height="68">
+        <dgm:shadow arcRad="20" X="674" Y="411" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="DBstudentsData" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -97,11 +97,11 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="DBstudentsTotal">
-        <dgm:body borderWidth="2" arcRad="20" X="684" Y="418" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="684" Y="70" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="674" Y="411" width="156" height="68">
+        <dgm:shadow arcRad="20" X="674" Y="63" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="DBstudentsTotal" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -121,20 +121,7 @@
         <dgm:outputPort name="businessservice.387829619.DBstudentsByYear" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
-    <dgm:gComponent name="getStudentsDataPipeline">
-        <dgm:body borderWidth="2" arcRad="20" X="267" Y="66" width="130" height="61">
-            <dgm:borderColor r="109" g="136" b="65"/>
-            <dgm:lightBgColor r="201" g="224" b="155"/>
-            <dgm:darkBgColor r="157" g="195" b="93"/>
-        </dgm:body>
-        <dgm:shadow arcRad="20" X="257" Y="59" width="150" height="77">
-            <dgm:bgColor r="196" g="228" b="240"/>
-        </dgm:shadow>
-        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
-        <dgm:outputPort name="businessservice.387829619.DBstudentsData" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
-        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
-    </dgm:gComponent>
-    <dgm:gComponent name="getStudentsTotalPipeline">
+    <dgm:gComponent name="getStudentsPipeline">
         <dgm:body borderWidth="2" arcRad="20" X="267" Y="414" width="130" height="61">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
@@ -144,10 +131,23 @@
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.387829619.DBstudentsData" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="getStudentsTotalPipeline">
+        <dgm:body borderWidth="2" arcRad="20" X="267" Y="66" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="257" Y="59" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:outputPort name="businessservice.387829619.DBstudentsTotal" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
-    <dgm:gWireLink source="getStudentsTotal" target="getStudentsTotalPipeline/__service__" width="2">
+    <dgm:gWireLink source="getStudentsData" target="getStudentsPipeline/__service__" width="2">
         <dgm:gSegment X1="168" Y1="472" X2="192" Y2="472"/>
         <dgm:gSegment X1="192" Y1="472" X2="192" Y2="439"/>
         <dgm:gSegment X1="192" Y1="439" X2="257" Y2="439"/>
@@ -168,24 +168,17 @@
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="getStudentsData" target="getStudentsDataPipeline/__service__" width="2">
+    <dgm:gWireLink source="getStudentsTotal" target="getStudentsTotalPipeline/__service__" width="2">
         <dgm:gSegment X1="168" Y1="124" X2="192" Y2="124"/>
         <dgm:gSegment X1="192" Y1="124" X2="192" Y2="91"/>
         <dgm:gSegment X1="192" Y1="91" X2="257" Y2="91"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="getStudentsDataPipelineProxyService" target="getStudentsDataPipeline/__service__" width="2">
+    <dgm:gWireLink source="getStudentsTotalPipelineProxyService" target="getStudentsTotalPipeline/__service__" width="2">
         <dgm:gSegment X1="168" Y1="36" X2="207" Y2="36"/>
         <dgm:gSegment X1="207" Y1="36" X2="207" Y2="91"/>
         <dgm:gSegment X1="207" Y1="91" X2="257" Y2="91"/>
-        <dgm:baseColor r="153" g="153" b="153"/>
-        <dgm:selectedColor r="49" g="106" b="196"/>
-    </dgm:gWireLink>
-    <dgm:gWireLink source="getStudentsTotalPipelineProxyService" target="getStudentsTotalPipeline/__service__" width="2">
-        <dgm:gSegment X1="168" Y1="384" X2="207" Y2="384"/>
-        <dgm:gSegment X1="207" Y1="384" X2="207" Y2="439"/>
-        <dgm:gSegment X1="207" Y1="439" X2="257" Y2="439"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
@@ -196,17 +189,24 @@
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="getStudentsDataPipeline/businessservice.387829619.DBstudentsData" target="DBstudentsData" width="2">
+    <dgm:gWireLink source="getStudentsTotalPipeline/businessservice.387829619.DBstudentsTotal" target="DBstudentsTotal" width="2">
         <dgm:gSegment X1="407" Y1="91" X2="431" Y2="91"/>
         <dgm:gSegment X1="431" Y1="91" X2="431" Y2="80"/>
         <dgm:gSegment X1="431" Y1="80" X2="674" Y2="80"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="getStudentsTotalPipeline/businessservice.387829619.DBstudentsTotal" target="DBstudentsTotal" width="2">
+    <dgm:gWireLink source="getStudentsPipeline/businessservice.387829619.DBstudentsData" target="DBstudentsData" width="2">
         <dgm:gSegment X1="407" Y1="439" X2="431" Y2="439"/>
         <dgm:gSegment X1="431" Y1="439" X2="431" Y2="428"/>
         <dgm:gSegment X1="431" Y1="428" X2="674" Y2="428"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="getStudentsPipelineProxyService" target="getStudentsPipeline/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="384" X2="207" Y2="384"/>
+        <dgm:gSegment X1="207" Y1="384" X2="207" Y2="439"/>
+        <dgm:gSegment X1="207" Y1="439" X2="257" Y2="439"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

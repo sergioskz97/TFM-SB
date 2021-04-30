@@ -1,12 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-   <xs:element name="EgresadosCollection" type="EgresadosCollection"/>
-   <xs:complexType name="EgresadosCollection">
+   <xs:element name="EgresagosCollection" type="EgresagosCollection"/>
+   <xs:complexType name="EgresagosCollection">
       <xs:sequence>
-         <xs:element name="Egresados" type="Egresados" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Egresagos" type="Egresagos" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:complexType name="Egresados">
+   <xs:complexType name="Egresagos">
       <xs:sequence>
          <xs:element name="cursoacadRef" type="string7" nillable="true"/>
          <xs:element name="tipoDocIdentidad" type="string1" minOccurs="0" nillable="true"/>
@@ -25,11 +25,9 @@
          <xs:element name="fechaccesoest" type="string4" minOccurs="0" nillable="true"/>
          <xs:element name="modaccesoest" type="string2" minOccurs="0" nillable="true"/>
          <xs:element name="notaingresoest" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="fechaegreso" type="string7" minOccurs="0" nillable="true"/>
-         <xs:element name="notaegresoest4" type="xs:decimal" minOccurs="0" nillable="true"/>
          <xs:element name="notaegresoest10" type="xs:decimal" minOccurs="0" nillable="true"/>
          <xs:element name="estupadre" type="string1" minOccurs="0" nillable="true"/>
-         <xs:element name="estumadre" type="string1" minOccurs="0" nillable="true"/>
+         <xs:element name="estumadre" type="string2" minOccurs="0" nillable="true"/>
          <xs:element name="ocupadre" type="string2" minOccurs="0" nillable="true"/>
          <xs:element name="ocumadre" type="string2" minOccurs="0" nillable="true"/>
          <xs:element name="trabajoalum" type="string1" minOccurs="0" nillable="true"/>
