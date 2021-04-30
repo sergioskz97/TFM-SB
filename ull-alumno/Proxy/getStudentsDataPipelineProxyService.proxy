@@ -5,10 +5,10 @@
             <con:inboundWss processWssHeader="true"/>
         </ser:security>
         <ser:binding type="SOAP" xsi:type="con:SoapBindingType" isSoap12="false" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
-            <con:wsdl ref="ull-alumno/Proxy/getStudentsPipeline"/>
+            <con:wsdl ref="ull-alumno/Proxy/getStudentsDataPipeline"/>
             <con:binding>
                 <con:name>execute_bind</con:name>
-                <con:namespace>http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsPipeline</con:namespace>
+                <con:namespace>http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsDataPipeline</con:namespace>
             </con:binding>
             <con:selector type="SOAP body"/>
         </ser:binding>
@@ -16,7 +16,7 @@
         <ser:ws-policy>
             <ser:binding-mode>no-policies</ser:binding-mode>
         </ser:ws-policy>
-        <ser:invoke ref="ull-alumno/Proxy/getStudentsPipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
+        <ser:invoke ref="ull-alumno/Proxy/getStudentsDataPipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
         <ser:xqConfiguration>
             <ser:snippetVersion>1.0</ser:snippetVersion>
         </ser:xqConfiguration>
@@ -25,7 +25,7 @@
         <tran:provider-id>http</tran:provider-id>
         <tran:inbound>true</tran:inbound>
         <tran:URI>
-            <env:value>/ull-alumno/Proxy/getStudentsPipelineProxyService</env:value>
+            <env:value>/ull-alumno/Proxy/getStudentsDataPipelineProxyService</env:value>
         </tran:URI>
         <tran:inbound-properties/>
         <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http">
