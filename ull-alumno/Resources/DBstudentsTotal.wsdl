@@ -17,7 +17,15 @@
       <plt:portType name="tns:DBstudentsTotal_ptt" />
     </plt:role>
   </plt:partnerLinkType>
+  <plt:partnerLinkType name="DBstudentsTotal_plt" >
+    <plt:role name="DBstudentsTotal_role" >
+      <plt:portType name="tns:DBstudentsTotal_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
     <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal" schemaLocation="DBstudentsTotal.xsd" />
+      </schema>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" >
         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsTotal" schemaLocation="DBstudentsTotal.xsd" />
       </schema>

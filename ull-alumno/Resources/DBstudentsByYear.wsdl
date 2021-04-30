@@ -17,7 +17,15 @@
       <plt:portType name="tns:DBstudentsByYear_ptt" />
     </plt:role>
   </plt:partnerLinkType>
+  <plt:partnerLinkType name="DBstudentsByYear_plt" >
+    <plt:role name="DBstudentsByYear_role" >
+      <plt:portType name="tns:DBstudentsByYear_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
     <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" schemaLocation="DBstudentsByYear.xsd" />
+      </schema>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" >
         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsByYear" schemaLocation="DBstudentsByYear.xsd" />
       </schema>
