@@ -1,12 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/DBstudentsData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-   <xs:element name="EgresagosCollection" type="EgresagosCollection"/>
-   <xs:complexType name="EgresagosCollection">
+   <xs:element name="EgresadosCollection" type="EgresadosCollection"/>
+   <xs:complexType name="EgresadosCollection">
       <xs:sequence>
-         <xs:element name="Egresagos" type="Egresagos" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Egresados" type="Egresados" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:complexType name="Egresagos">
+   <xs:complexType name="Egresados">
       <xs:sequence>
          <xs:element name="cursoacadRef" type="string7" nillable="true"/>
          <xs:element name="tipoDocIdentidad" type="string1" minOccurs="0" nillable="true"/>

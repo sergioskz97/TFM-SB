@@ -20,13 +20,13 @@
     <wsdl:message name="DBstudentsDataSelect_inputParameters">
         <wsdl:part name="DBstudentsDataSelect_inputParameters" element="top:DBstudentsDataSelect_titulacion_curso_sexo_dniInputParameters"/>
     </wsdl:message>
-    <wsdl:message name="EgresagosCollection_msg">
-        <wsdl:part name="EgresagosCollection" element="top:EgresagosCollection"/>
+    <wsdl:message name="EgresadosCollection_msg">
+        <wsdl:part name="EgresadosCollection" element="top:EgresadosCollection"/>
     </wsdl:message>
     <wsdl:portType name="DBstudentsData_ptt">
         <wsdl:operation name="DBstudentsDataSelect">
             <wsdl:input message="tns:DBstudentsDataSelect_inputParameters"/>
-            <wsdl:output message="tns:EgresagosCollection_msg"/>
+            <wsdl:output message="tns:EgresadosCollection_msg"/>
         </wsdl:operation>
     </wsdl:portType>
 </wsdl:definitions>
