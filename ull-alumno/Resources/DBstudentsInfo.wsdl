@@ -1,0 +1,40 @@
+<wsdl:definitions
+     name="DBstudentsInfo"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsInfo"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/TFM-SB/ull-alumno/DBstudentsInfo"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="DBstudentsInfo_plt" >
+    <plt:role name="DBstudentsInfo_role" >
+      <plt:portType name="tns:DBstudentsInfo_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="DBstudentsInfo_plt" >
+    <plt:role name="DBstudentsInfo_role" >
+      <plt:portType name="tns:DBstudentsInfo_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo" schemaLocation="DBstudentsInfo.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo" schemaLocation="DBstudentsInfo.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="DBstudentsInfoInput_msg">
+        <wsdl:part name="DBstudentsInfoInput_msg" element="db:DBstudentsInfoInput"/>
+    </wsdl:message>
+    <wsdl:message name="DBstudentsInfoOutputCollection_msg">
+        <wsdl:part name="DBstudentsInfoOutputCollection" element="db:DBstudentsInfoOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="DBstudentsInfo_ptt">
+        <wsdl:operation name="DBstudentsInfo">
+            <wsdl:input message="tns:DBstudentsInfoInput_msg"/>
+            <wsdl:output message="tns:DBstudentsInfoOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

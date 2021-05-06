@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="DBstudentsInfoInput" type="DBstudentsInfoInput"/>
+   <xs:complexType name="DBstudentsInfoInput">
+      <xs:sequence>
+         <xs:element name="curso" type="xs:string" nillable="true"/>
+         <xs:element name="titulacion" type="xs:string" nillable="true"/>
+         <xs:element name="sexo" type="xs:string" nillable="true"/>
+         <xs:element name="dni" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="DBstudentsInfoOutputCollection" type="DBstudentsInfoOutputCollection"/>
+   <xs:complexType name="DBstudentsInfoOutputCollection">
+      <xs:sequence>
+         <xs:element name="DBstudentsInfoOutput" type="DBstudentsInfoOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="DBstudentsInfoOutput">
+      <xs:sequence>
+         <xs:element name="CURSOACAD_REF" type="xs:string" nillable="true"/>
+         <xs:element name="TIPO_DOC_IDENTIDAD" type="xs:string" nillable="true"/>
+         <xs:element name="NUMERO_DOCUMENTO" type="xs:string" nillable="true"/>
+         <xs:element name="LETRA_DOCUMENTO" type="xs:string" nillable="true"/>
+         <xs:element name="APELLIDO_1" type="xs:string" nillable="true"/>
+         <xs:element name="APELLIDO_2" type="xs:string" nillable="true"/>
+         <xs:element name="NOMBRE" type="xs:string" nillable="true"/>
+         <xs:element name="SEXO" type="xs:string" nillable="true"/>
+         <xs:element name="NACIONALIDAD" type="xs:string" nillable="true"/>
+         <xs:element name="PAIS_NACIMIENTO" type="xs:string" nillable="true"/>
+         <xs:element name="FECHA_NACIMIENTO" type="xs:string" nillable="true"/>
+         <xs:element name="UNIVERSIDAD" type="xs:string" nillable="true"/>
+         <xs:element name="COD_TITULACION" type="xs:string" nillable="true"/>
+         <xs:element name="FECHACCESOSUE" type="xs:string" nillable="true"/>
+         <xs:element name="FECHACCESOEST" type="xs:string" nillable="true"/>
+         <xs:element name="MODACCESOEST" type="xs:string" nillable="true"/>
+         <xs:element name="NOTAINGRESOEST" type="xs:decimal" nillable="true"/>
+         <xs:element name="NOTAEGRESOEST10" type="xs:decimal" nillable="true"/>
+         <xs:element name="ESTUPADRE" type="xs:string" nillable="true"/>
+         <xs:element name="ESTUMADRE" type="xs:string" nillable="true"/>
+         <xs:element name="OCUPADRE" type="xs:string" nillable="true"/>
+         <xs:element name="OCUMADRE" type="xs:string" nillable="true"/>
+         <xs:element name="TRABAJOALUM" type="xs:string" nillable="true"/>
+         <xs:element name="MUNIFAM" type="xs:string" nillable="true"/>
+         <xs:element name="CODPOSTFAM" type="xs:string" nillable="true"/>
+         <xs:element name="PAISFAM" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
