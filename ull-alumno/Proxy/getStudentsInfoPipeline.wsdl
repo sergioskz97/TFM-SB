@@ -1,0 +1,40 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="getStudentsInfoPipeline"
+     targetNamespace="http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsInfoPipeline"
+     xmlns:tns="http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsInfoPipeline"
+     xmlns:inp1="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsInfo" schemaLocation="../Resources/DBstudentsInfo.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="requestMessage">
+        <wsdl:part name="in" element="inp1:DBstudentsInfoInput"/>
+    </wsdl:message>
+    <wsdl:message name="replyMessage">
+        <wsdl:part name="out" element="inp1:DBstudentsInfoOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="execute_ptt">
+        <wsdl:operation name="execute">
+            <wsdl:input message="tns:requestMessage"/>
+            <wsdl:output message="tns:replyMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="execute_bind" type="tns:execute_ptt">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="execute">
+            <soap:operation style="document" soapAction="execute"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsInfoPipeline"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="http://xmlns.oracle.com/TFM-SB/ull-alumno/getStudentsInfoPipeline"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>
