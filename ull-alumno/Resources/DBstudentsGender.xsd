@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsGender" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/DBstudentsGender" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="DBstudentsGenderInput" type="DBstudentsGenderInput"/>
+   <xs:complexType name="DBstudentsGenderInput">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:element name="DBstudentsGenderOutputCollection" type="DBstudentsGenderOutputCollection"/>
+   <xs:complexType name="DBstudentsGenderOutputCollection">
+      <xs:sequence>
+         <xs:element name="DBstudentsGenderOutput" type="DBstudentsGenderOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="DBstudentsGenderOutput">
+      <xs:sequence>
+         <xs:element name="SEXO" type="xs:string" nillable="true"/>
+         <xs:element name="COUNT___" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
