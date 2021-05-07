@@ -12,4 +12,7 @@
     <ns:reference>
         <ns:interface src="BusinessService:ull-alumno/Business/DBstudentsByYear"/>
     </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ull-alumno/Business/DBstudentsGender"/>
+    </ns:reference>
 </ns:composite>
